@@ -1,0 +1,65 @@
+.nav-menu {
+  background: linear-gradient(90deg, #1a2a5a, #2a4aaf, #1a2a5a);
+  position: fixed;
+  color: white;
+  padding: 10px;
+  z-index: 1000;
+  width: 100%;
+  .
+}
+
+/* Отступ для всех секций */
+#heads-gallery,
+#teachers-gallery,
+#photo,
+#comments,
+#event,
+#history,
+#plan,
+#creators,
+#achivments {
+  scroll-margin-top: 70px;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  margin: 0 15px; /* Уменьшаем отступ, т.к. разделитель добавит расстояние */
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  position: relative; /* Нужно для позиционирования разделителя */
+}
+
+/* Стиль разделителя */
+.nav-item:not(:last-child)::after {
+  content: "/";
+  color: #ff6b6b; /* Красный цвет (можно заменить на #ffffff с opacity) */
+  position: absolute;
+  right: -20px; /* Сдвигаем разделитель вправо */
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  transition: all 0.3s;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}

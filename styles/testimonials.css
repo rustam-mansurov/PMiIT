@@ -1,0 +1,157 @@
+/* Стили для раздела отзывов */
+.testimonials-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+.testimonials-slider {
+    overflow: hidden;
+    position: relative;
+    height: 300px; /* Фиксированная высота для плавности анимации */
+}
+
+.testimonial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.testimonial.active {
+    opacity: 1;
+}
+
+.testimonial-content {
+    display: flex;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-photo {
+    flex: 0 0 150px;
+    margin-right: 20px;
+}
+
+.testimonial-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2980b9;
+}
+
+.testimonial-text {
+    flex: 1;
+}
+
+.testimonial h3 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+.graduation-year {
+    font-style: italic;
+    color: #7f8c8d;
+    margin: 5px 0;
+}
+
+.testimonial-quote {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.testimonial-quote::before {
+    content: '"';
+    font-size: 40px;
+    color: #2980b9;
+    position: absolute;
+    left: -10px;
+    top: -15px;
+    opacity: 0.3;
+}
+
+.current-position {
+    font-weight: bold;
+    color: #2980b9;
+}
+
+.testimonial-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(41, 128, 185, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.testimonial-nav:hover {
+    background: rgba(41, 128, 185, 1);
+}
+
+.testimonial-prev {
+    left: 0;
+}
+
+.testimonial-next {
+    right: 0;
+}
+
+.testimonial-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #bbb;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #2980b9;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .testimonial-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .testimonial-photo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .testimonial-text {
+        text-align: center;
+    }
+    
+    .testimonial-quote {
+        padding-left: 0;
+    }
+    
+    .testimonial-quote::before {
+        display: none;
+    }
+}
