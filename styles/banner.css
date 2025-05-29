@@ -101,14 +101,14 @@
   font-size: 3.5em;
   margin-bottom: 10px;
   /* Изменённый цвет на белый (как верхняя полоса флага России) */
-  color: black;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  color: red;
+  text-shadow: 0 2 5px rgba(255, 255, 255, 0.5);
   animation: fadeInUp 1s ease-out;
 }
 
 .banner-subtitle {
-  font-size: 1.5em;
-  margin: 5px 0;
+  font-size: 2em;
+  margin: 0;
   opacity: 0.9;
   animation: fadeInUp 1s ease-out 0.3s both;
   font-family: "Montserrat", sans-serif;
