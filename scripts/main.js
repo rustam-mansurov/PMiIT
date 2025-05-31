@@ -4,11 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Инициализация математических символов на фоне
   initMathBackground();
 
-  // Обработчик клика для конфетти
-  banner.addEventListener("click", handleBannerClick);
-
-  // Автоматический запуск конфетти через 3 секунды
-  setTimeout(launchAutoConfetti, 3000);
 });
 
 function initMathBackground() {

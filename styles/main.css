@@ -37,8 +37,9 @@ body {
   border-bottom: 2px solid var(--accent-color);
 }
 
-.university-logo img {
-  height: 150px;
+.university-logo {
+  width: 20%;    /* Занимает 100% ширины родительского контейнера */
+  height: auto;   /* Автоматический расчет высоты для сохранения пропорций */
 }
 
 h1 {
