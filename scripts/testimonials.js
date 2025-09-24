@@ -16,33 +16,33 @@ document.addEventListener('DOMContentLoaded', function() {
     let autoSlideInterval;
 
     // Основная функция показа отзыва
-    function showTestimonial(index) {
-        // Проверка на валидность индекса
-        if (index < 0 || index >= testimonials.length) return;
+function showTestimonial(index) {
+    if (index < 0 || index >= testimonials.length) return;
+    
+    // Сохраняем текущую высоту перед изменением
+    const slider = document.querySelector('.testimonials-slider');
+    const currentHeight = slider.clientHeight;
+    slider.style.minHeight = currentHeight + 'px';
+    
+    testimonials.forEach(testimonial => {
+        testimonial.classList.remove('active');
+        testimonial.style.opacity = '0';
+    });
+    
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    setTimeout(() => {
+        testimonials[index].classList.add('active');
+        testimonials[index].style.opacity = '1';
+        dots[index].classList.add('active');
+        currentIndex = index;
         
-        // Сбрасываем активные элементы
-        testimonials.forEach(testimonial => {
-            testimonial.classList.remove('active');
-            testimonial.style.opacity = '0';
-        });
-        
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        // Плавное появление нового отзыва
+        // Восстанавливаем автоматическую высоту после анимации
         setTimeout(() => {
-            testimonials[index].classList.add('active');
-            testimonials[index].style.opacity = '1';
-            dots[index].classList.add('active');
-            currentIndex = index;
-            
-            // Прокрутка к активному отзыву (для мобильных устройств)
-            testimonials[index].scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'center'
-            });
-        }, 50);
-    }
+            slider.style.minHeight = 'auto';
+        }, 500);
+    }, 50);
+}
 
     // Следующий отзыв
     function nextTestimonial() {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Автоматическое перелистывание
     function startAutoSlide() {
-        autoSlideInterval = setInterval(nextTestimonial, 500000000);
+        autoSlideInterval = setInterval(nextTestimonial, 5000000);
     }
 
     // Сброс автоматического перелистывания
